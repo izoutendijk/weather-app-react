@@ -1,21 +1,22 @@
-import logo from "./logo.svg";
 import "./App.css";
+import "./styles.css";
+
+import Date from "./Date";
+import TempButton from "./TempButton";
+import SearchBar from "./SearchBar";
+import TempCurrent from "./TempCurrent";
+import CurrentCity from "./CurrentCity";
+import Forecast from "./Forecast";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Add the weather app here, for next time yo</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Date day="Saturday" hour={18} minutes="00" />
+      <TempButton />
+      <SearchBar />
+      <TempCurrent />
+      <CurrentCity />
+      <Forecast />
     </div>
   );
 }

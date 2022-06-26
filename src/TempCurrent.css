@@ -1,0 +1,31 @@
+.tempCurrent .tempValue,
+.tempCurrent .tempUnits {
+  font-size: 45px;
+  font-weight: 500;
+  color: #2b8b7f;
+  font-weight: 500;
+  margin-bottom: 0px;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.tempCurrent .tempUnits {
+  position: relative;
+  font-size: 16px;
+  top: -22px;
+}
+
+.tempCurrent .temp,
+.CurrentCity .stats {
+  font-size: 10px;
+  text-align: center;
+}
+
+.stats {
+  font-size: 10px;
+  margin-bottom: 26px;
+}
+
+.stats .col-3 {
+  width: 28%;
+}
