@@ -1,0 +1,21 @@
+body {
+  font-family: "Poppins", sans-serif;
+  display: block;
+  background: linear-gradient(#809ea1, #908670);
+  max-width: 650px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+body .source-comment {
+  color: #fff;
+  font-size: 10px;
+  text-decoration: none;
+}
+
+body .source-comment a {
+  color: #dfb228;
+  text-decoration: none;
+  font-weight: italic;
+  transition: all 200ms ease;
+}
