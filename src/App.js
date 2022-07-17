@@ -5,11 +5,11 @@ import Weather from "./Weather";
 export default function App() {
   return (
     <div className="App">
-      <div class="container">
+      <div className="container">
         <Weather />
-        <div class="source-comment">
+        <div className="source-comment">
           <a
-            class="source-code btn-link"
+            className="source-code btn-link"
             href="https://github.com/izoutendijk/weather-app-react"
             target="_blanks"
           >

@@ -36,6 +36,7 @@ export default function SearchBar() {
               id="inputCity"
               className="form-control"
               placeholder="Enter a city here"
+              autoFocus="on"
               onChange={changeCity}
             />
           </div>
