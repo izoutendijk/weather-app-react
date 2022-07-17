@@ -8,7 +8,7 @@ import TempCurrent from "./TempCurrent";
 import CurrentCity from "./CurrentCity";
 import Forecast from "./Forecast";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <Date day="Saturday" hour={18} minutes="00" />
@@ -20,5 +20,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
