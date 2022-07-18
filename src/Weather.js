@@ -22,6 +22,7 @@ export default function Weather(props) {
     console.log(response);
     setWeatherData({
       ready: true,
+      date: response.data.dt*1000,
       city: response.data.name,
       temperature: Math.round(response.data.main.temp),
       tempMax: Math.round(response.data.main.temp_max),
@@ -49,7 +50,7 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <Date day="Saturday" hour={18} minutes="00" />
+        <Date date={weatherData.date} day="Saturday" hour={18} minutes="00" />
         <TempButton />
 
         <form id="search-bar" onSubmit={handleSubmit}>
