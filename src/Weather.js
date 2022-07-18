@@ -9,14 +9,8 @@ import CurrentCity from "./CurrentCity";
 import Forecast from "./Forecast";
 
 export default function Weather(props) {
-  let apiKey = "a68381d4faf2a13b11b7dc8945964fc7";
   let [city, setCity] = useState(props.defaultCity);
   let [weatherData, setWeatherData] = useState({ ready: false });
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    search();
-  }
 
   function handleWeather(response) {
     console.log(response);
@@ -34,12 +28,18 @@ export default function Weather(props) {
     });
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
   function changeCity(event) {
     setCity(event.target.value);
   }
 
   function search() {
     if (city.length > 0) {
+      let apiKey = "a68381d4faf2a13b11b7dc8945964fc7";
       let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
       axios.get(url).then(handleWeather);
     } else {
