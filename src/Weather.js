@@ -26,10 +26,10 @@ export default function Weather(props) {
       temperature: Math.round(response.data.main.temp),
       tempMax: Math.round(response.data.main.temp_max),
       tempMin: Math.round(response.data.main.temp_min),
-      wind: Math.round(response.data.wind.speed),
+      wind: Math.round(response.data.wind.speed * 3.6),
       unitWind: "km/h",
       humidity: response.data.main.humidity,
-      uvIndex: "null"
+      uvIndex: "null",
     });
   }
 
