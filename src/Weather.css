@@ -13,3 +13,29 @@
   margin-bottom: 0px;
   font-weight: 500;
 }
+
+.fa-magnifying-glass {
+  font-size: 10px;
+  color: #2b8b7f;
+  margin-right: -6px;
+  transition: all 150ms ease-in-out;
+}
+.fa-magnifying-glass:hover {
+  cursor: pointer;
+  font-size: 15px;
+}
+
+/*Somehow get search bar to the center*/
+.inputCityBar {
+  display: flex;
+  justify-content: center;
+}
+
+.form-control {
+  font-size: 10px;
+}
+
+.btn-link {
+  font-size: 10px;
+  color: #908670;
+}

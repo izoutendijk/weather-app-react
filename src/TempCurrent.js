@@ -4,11 +4,19 @@ import "./TempMinMax";
 import "./TempCurrent.css";
 import TempMinMax from "./TempMinMax";
 
-export default function tempCurrent() {
+export default function tempCurrent(props) {
   return (
     <div className="tempCurrent">
-      <TempValue className="tempValue" currentTemp={19} unit="C" />
-      <TempMinMax unit="C" valueMin={11} valueMax={19} />
+      <TempValue
+        className="tempValue"
+        currentTemp={props.data.temperature}
+        unit="C"
+      />
+      <TempMinMax
+        unit="C"
+        valueMin={props.data.tempMin}
+        valueMax={props.data.tempMax}
+      />
     </div>
   );
 }
