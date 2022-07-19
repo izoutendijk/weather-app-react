@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
 
-import Date from "./Date";
+import FormattedDate from "./FormattedDate";
 import TempButton from "./TempButton";
 import TempCurrent from "./TempCurrent";
 import CurrentCity from "./CurrentCity";
@@ -16,7 +16,7 @@ export default function Weather(props) {
     console.log(response);
     setWeatherData({
       ready: true,
-      date: response.data.dt * 1000,
+      date: new Date(response.data.dt * 1000),
       city: response.data.name,
       temperature: Math.round(response.data.main.temp),
       tempMax: Math.round(response.data.main.temp_max),
@@ -50,9 +50,8 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <Date date={weatherData.date} />
+        <FormattedDate date={weatherData.date} />
         <TempButton />
-
         <form id="search-bar" onSubmit={handleSubmit}>
           <div className="row g-3 inputCityBar">
             <div className="col-auto">
