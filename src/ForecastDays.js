@@ -5,11 +5,7 @@ export default function ForecastDays(props) {
     <div className="row align-items-center forecastEl">
       <div className="col-2 day">{props.day}</div>
       <div className="col-1 weather">
-        <img
-          src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-          id="icon"
-          alt=""
-        />
+        <img src={props.iconUrl} id="icon" alt="" />
       </div>
       <div className="col-2 tempMinMax">
         <span id="min-value">

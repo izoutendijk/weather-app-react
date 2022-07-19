@@ -2,15 +2,27 @@ import React from "react";
 import "./Forecast.css";
 import ForecastDays from "./ForecastDays";
 
-export default function Forecast() {
+export default function Forecast(props) {
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[props.data.date.getDay()];
+
   return (
     <div className="Forecast">
       <ForecastDays
-        day="Wednesday"
+        day={day}
         unit="C"
-        minValue={11}
-        maxValue={19}
-        description="Beautiful sunny day without too many clouds"
+        minValue={props.data.tempMin}
+        maxValue={props.data.tempMax}
+        iconUrl={props.data.iconUrl}
+        description={props.data.description}
       />
       <ForecastDays
         day="Thursday"
