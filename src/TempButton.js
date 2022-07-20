@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import "./TempButton.css";
-import { celsius, fahrenheit } from "./Weather";
 
 export default function TempButton() {
-  let [unit, setUnit] = useState(`${celsius}`);
+  let [unit, setUnit] = useState("celsius");
 
   function showFahrenheit(event) {
     event.preventDefault();
-    setUnit(`${fahrenheit}`);
+    setUnit("fahrenheit");
   }
 
   function showCelsius(event) {
     event.preventDefault();
-    setUnit(`${celsius}`);
+    setUnit("celsius");
   }
 
   if (unit === "celsius") {
