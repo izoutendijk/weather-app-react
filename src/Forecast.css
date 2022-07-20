@@ -14,13 +14,9 @@
   font-size: 13px;
 }
 
-img {
-  height: 35px;
-}
-
 .Forecast .forecastEl .weather {
   margin-left: 12px;
-  margin-right: 24px;
+  margin-right: 12px;
 }
 
 .Forecast .forecastEl .tempMinMax {

@@ -21,29 +21,32 @@ export default function Forecast(props) {
         unit="C"
         minValue={props.data.tempMin}
         maxValue={props.data.tempMax}
-        iconUrl={props.data.iconUrl}
+        icon={props.data.icon}
         description={props.data.description}
       />
       <ForecastDays
-        day="Thursday"
+        day={day}
         unit="C"
-        minValue={11}
-        maxValue={19}
-        description="Beautiful sunny day without too many clouds"
+        minValue={props.data.tempMin}
+        maxValue={props.data.tempMax}
+        icon={props.data.icon}
+        description={props.data.description}
       />
       <ForecastDays
-        day="Friday"
+        day={day}
         unit="C"
-        minValue={11}
-        maxValue={19}
-        description="Beautiful sunny day without too many clouds"
+        minValue={props.data.tempMin}
+        maxValue={props.data.tempMax}
+        icon={props.data.icon}
+        description={props.data.description}
       />
       <ForecastDays
-        day="Saturday"
+        day={day}
         unit="C"
-        minValue={11}
-        maxValue={19}
-        description="Beautiful sunny day without too many clouds"
+        minValue={props.data.tempMin}
+        maxValue={props.data.tempMax}
+        icon={props.data.icon}
+        description={props.data.description}
       />
     </div>
   );
