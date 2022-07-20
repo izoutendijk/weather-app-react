@@ -8,6 +8,9 @@ import TempCurrent from "./TempCurrent";
 import CurrentCity from "./CurrentCity";
 import Forecast from "./Forecast";
 
+export const celsius = "celsius";
+export const fahrenheit = "fahrenheit";
+
 export default function Weather(props) {
   let [city, setCity] = useState(props.defaultCity);
   let [weatherData, setWeatherData] = useState({ ready: false });
