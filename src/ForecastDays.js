@@ -5,8 +5,8 @@ export default function ForecastDays(props) {
   const iconMapping = {
     "01d": "CLEAR_DAY",
     "01n": "CLEAR_NIGHT",
-    "02d": "CLOUDY_DAY",
-    "02n": "CLOUDY_NIGHT",
+    "02d": "CLOUDY",
+    "02n": "CLOUDY",
     "03d": "PARTLY_CLOUDY_DAY",
     "03n": "PARTLY_CLOUDY_NIGHT",
     "04d": "PARTLY_CLOUDY_DAY",
