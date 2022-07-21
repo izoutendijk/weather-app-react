@@ -31,7 +31,7 @@ export default function ForecastDays(props) {
           icon={iconMapping[props.icon]}
           color="#dfb228"
           size={30}
-          animate="true"
+          animate={true}
         />
       </div>
       <div className="col-2 tempMinMax">
