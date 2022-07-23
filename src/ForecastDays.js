@@ -23,20 +23,23 @@ export default function ForecastDays(props) {
     "50n": "FOG",
   };
 
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let day = (new Date(props.data.dt)).getDay();
+  function day() {
+    let days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    let day = new Date(props.data.dt).getDay();
+    return `${days[day]}`;
+  }
 
   return (
     <div className="row align-items-center forecastEl">
-      <div className="col-2 day">{days[day]}</div>
+      <div className="col-2 day">{day()}</div>
       <div className="col-1 weather">
         <ReactAnimatedWeather
           icon={iconMapping[props.data.weather[0].icon]}
