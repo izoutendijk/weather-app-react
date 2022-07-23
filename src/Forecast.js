@@ -23,7 +23,6 @@ export default function Forecast(props) {
   let lat = props.coordinates.lat;
   let lon = props.coordinates.lon;
   let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
 
   axios.get(apiUrl).then(handleResponse);
 
