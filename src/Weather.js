@@ -3,7 +3,6 @@ import "./Weather.css";
 import axios from "axios";
 
 import FormattedDate from "./FormattedDate";
-import TempButton from "./TempButton";
 import TempCurrent from "./TempCurrent";
 import CurrentCity from "./CurrentCity";
 import Forecast from "./Forecast";
@@ -13,7 +12,6 @@ export default function Weather(props) {
   let [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleWeather(response) {
-    console.log(response);
     setWeatherData({
       ready: true,
       date: new Date(response.data.dt * 1000),
@@ -25,7 +23,7 @@ export default function Weather(props) {
       wind: Math.round(response.data.wind.speed * 3.6),
       unitWind: "km/h",
       humidity: response.data.main.humidity,
-      uvIndex: "null",
+      pressure: response.data.main.pressure,
       icon: response.data.weather[0].icon,
       description: response.data.weather[0].description,
     });
@@ -54,7 +52,7 @@ export default function Weather(props) {
     return (
       <div className="Weather">
         <FormattedDate date={weatherData.date} />
-        <TempButton />
+
         <form id="search-bar" onSubmit={handleSubmit}>
           <div className="row g-3 inputCityBar">
             <div className="col-auto">

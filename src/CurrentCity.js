@@ -11,7 +11,7 @@ export default function CurrenCity(props) {
         <div className="col-3 wind">
           Wind: {props.data.wind} {props.data.unitWind}
         </div>
-        <div className="col-3 uvindex">UV-index: {props.data.uvIndex}</div>
+        <div className="col-3 uvindex">Pressure: {props.data.pressure} hPA</div>
         <div className="col-1 empty"></div>
       </div>
     </div>
