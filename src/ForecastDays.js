@@ -23,12 +23,23 @@ export default function ForecastDays(props) {
     "50n": "FOG",
   };
 
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = (new Date(props.data.dt)).getDay();
+
   return (
     <div className="row align-items-center forecastEl">
-      <div className="col-2 day">{props.day}</div>
+      <div className="col-2 day">{days[day]}</div>
       <div className="col-1 weather">
         <ReactAnimatedWeather
-          icon={iconMapping[props.icon]}
+          icon={iconMapping[props.data.weather[0].icon]}
           color="#dfb228"
           size={30}
           animate={true}
@@ -36,14 +47,16 @@ export default function ForecastDays(props) {
       </div>
       <div className="col-2 tempMinMax">
         <span id="min-value">
-          Min: {props.minValue}º{props.unit}
+          Min: {Math.round(props.data.main.temp_min)}º{props.unit}
         </span>
         <br />
         <span id="max-value">
-          Max: {props.maxValue}º{props.unit}
+          Max: {Math.round(props.data.main.temp_max)}º{props.unit}
         </span>
       </div>
-      <div className="col-6 description">{props.description}</div>
+      <div className="col-6 description">
+        {props.data.weather[0].description}
+      </div>
     </div>
   );
 }

@@ -7,17 +7,6 @@ export default function Forecast(props) {
   let [loaded, setLoaded] = useState(false);
   let [forecast, setForecast] = useState(null);
 
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let day = days[props.data.date.getDay()];
-
   function handleResponse(response) {
     console.log(response.data.list);
     setForecast(response.data.list);
@@ -27,14 +16,10 @@ export default function Forecast(props) {
   if (loaded) {
     return (
       <div className="Forecast">
-        <ForecastDays
-          day={day}
-          unit="C"
-          minValue={Math.round(forecast[0].main.temp_min)}
-          maxValue={Math.round(forecast[0].main.temp_max)}
-          icon={props.data.icon}
-          description={props.data.description}
-        />
+        <ForecastDays data={forecast[0]} unit="C" />
+        <ForecastDays data={forecast[1]} unit="C" />
+        <ForecastDays data={forecast[2]} unit="C" />
+        <ForecastDays data={forecast[3]} unit="C" />
       </div>
     );
   } else {
