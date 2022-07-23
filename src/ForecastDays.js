@@ -33,7 +33,7 @@ export default function ForecastDays(props) {
       "Friday",
       "Saturday",
     ];
-    let day = new Date(props.data.dt).getDay();
+    let day = new Date(props.data.dt * 1000).getDay();
     return `${days[day]}`;
   }
 
@@ -50,11 +50,11 @@ export default function ForecastDays(props) {
       </div>
       <div className="col-2 tempMinMax">
         <span id="min-value">
-          Min: {Math.round(props.data.main.temp_min)}º{props.unit}
+          Min: {Math.round(props.data.temp.min)}º{props.unit}
         </span>
         <br />
         <span id="max-value">
-          Max: {Math.round(props.data.main.temp_max)}º{props.unit}
+          Max: {Math.round(props.data.temp.max)}º{props.unit}
         </span>
       </div>
       <div className="col-6 description">
