@@ -18,6 +18,7 @@ export default function Weather(props) {
       ready: true,
       date: new Date(response.data.dt * 1000),
       city: response.data.name,
+      coordinates: response.data.coord,
       temperature: Math.round(response.data.main.temp),
       tempMax: Math.round(response.data.main.temp_max),
       tempMin: Math.round(response.data.main.temp_min),
@@ -81,7 +82,7 @@ export default function Weather(props) {
 
         <TempCurrent data={weatherData} />
         <CurrentCity data={weatherData} />
-        <Forecast data={weatherData} />
+        <Forecast data={weatherData} coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
