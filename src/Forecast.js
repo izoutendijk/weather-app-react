@@ -1,6 +1,7 @@
 import React from "react";
 import "./Forecast.css";
 import ForecastDays from "./ForecastDays";
+import axios from "axios";
 
 export default function Forecast(props) {
   let days = [
@@ -14,11 +15,16 @@ export default function Forecast(props) {
   ];
   let day = days[props.data.date.getDay()];
 
+  function handleResponse(response) {
+    console.log(response.data);
+  }
+
   let apiKey = "a68381d4faf2a13b11b7dc8945964fc7";
   let lat = props.coordinates.lat;
   let lon = props.coordinates.lon;
   let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${apiKey}`;
-  console.log(apiUrl);
+
+  axios.get(apiUrl).then(handleResponse);
 
   return (
     <div className="Forecast">
